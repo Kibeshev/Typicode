@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class UsersAPIManager {
+    
     func getUsers(urlString: String, completion: @escaping ([User]?) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(nil)
