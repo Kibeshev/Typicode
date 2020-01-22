@@ -14,7 +14,7 @@ class UserTableViewCell: UITableViewCell {
     var phoneLabel: UILabel = UILabel()
 
     init() {
-        super.init(style: .default, reuseIdentifier: "cell")
+        super.init(style: .default, reuseIdentifier: "userCell")
 
         self.addSubview(nameLabel)
         self.addSubview(phoneLabel)
