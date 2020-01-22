@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        tableView.register(UserTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UserTableViewCell.self, forCellReuseIdentifier: "userCell")
     }
 }
 
