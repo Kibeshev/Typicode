@@ -10,8 +10,12 @@ import UIKit
 
 class UserTableViewCell: UITableViewCell {
 
+    // MARK: - Subviews
+
     private var nameLabel = UILabel()
     private var phoneLabel = UILabel()
+
+    // MARK: - UIViewController
 
     init() {
         super.init(style: .default, reuseIdentifier: "userCell")
@@ -32,6 +36,8 @@ class UserTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Methods
 
     func configure(user: User) {
         nameLabel.text = user.name

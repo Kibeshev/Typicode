@@ -10,18 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Properties
+
     private let manager = UsersAPIManager()
     private let tableView = UITableView()
     private var users: [User] = []
 
+    // MARK: - UIViewController
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureTableView()
         loadData()
+        configureTableView()
+
         tableView.delegate = self
         tableView.dataSource = self
     }
+
+    // MARK: - Private methods
 
     private func loadData() {
         let url = "https://jsonplaceholder.typicode.com/users"
@@ -41,18 +47,22 @@ class ViewController: UIViewController {
 
         self.view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+
         tableView.register(UserTableViewCell.self, forCellReuseIdentifier: "userCell")
     }
 }
 
+// MARK: - UITableViewDataSource
+
 extension ViewController: UITableViewDelegate {
 
 }
+
+// MARK: - UITableViewDelegate
 
 extension ViewController: UITableViewDataSource {
 
