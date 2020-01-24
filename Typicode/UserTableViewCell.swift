@@ -10,8 +10,12 @@ import UIKit
 
 class UserTableViewCell: UITableViewCell {
 
-    var nameLabel: UILabel = UILabel()
-    var phoneLabel: UILabel = UILabel()
+    // MARK: - Subviews
+
+    private var nameLabel = UILabel()
+    private var phoneLabel = UILabel()
+
+    // MARK: - UIViewController
 
     init() {
         super.init(style: .default, reuseIdentifier: "userCell")
@@ -33,17 +37,10 @@ class UserTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    // MARK: - Methods
 
-        // Initialization code
+    func configure(user: User) {
+        nameLabel.text = user.name
+        phoneLabel.text = user.phone
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
-
 }

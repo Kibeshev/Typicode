@@ -10,10 +10,12 @@ import UIKit
 
 class UsersAPIManager {
     func getUsers(urlString: String, completion: @escaping ([User]?) -> Void) {
+
         guard let url = URL(string: urlString) else {
             completion(nil)
             return
         }
+
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
                 let decoder = JSONDecoder()
